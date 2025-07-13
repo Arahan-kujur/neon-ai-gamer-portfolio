@@ -243,6 +243,87 @@ const Portfolio = () => {
         </div>
       </section>
 
+      {/* Certifications Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-electric-glow">Certifications</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Deep Learning Specialization",
+                issuer: "Coursera / DeepLearning.AI",
+                date: "2024",
+                badge: "AI"
+              },
+              {
+                title: "Natural Language Processing",
+                issuer: "Coursera / DeepLearning.AI", 
+                date: "2024",
+                badge: "NLP"
+              },
+              {
+                title: "Computer Vision Fundamentals",
+                issuer: "Coursera / University of Buffalo",
+                date: "2023",
+                badge: "CV"
+              },
+              {
+                title: "Game Development with Unreal Engine",
+                issuer: "Udemy",
+                date: "2023",
+                badge: "Game"
+              },
+              {
+                title: "LangChain for LLM Development",
+                issuer: "DeepLearning.AI",
+                date: "2024",
+                badge: "LLM"
+              },
+              {
+                title: "Generative AI with Large Language Models",
+                issuer: "Coursera / DeepLearning.AI",
+                date: "2024",
+                badge: "GenAI"
+              }
+            ].map((cert, index) => (
+              <Card key={index} className="glass-card hover-lift border-primary/30 group">
+                <CardHeader className="pb-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <CardTitle className="text-lg leading-tight text-primary group-hover:text-electric-glow transition-colors">
+                      {cert.title}
+                    </CardTitle>
+                    <Badge 
+                      variant="secondary" 
+                      className="bg-gradient-electric/20 text-primary border-primary/30 shrink-0"
+                    >
+                      {cert.badge}
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <span className="font-medium">{cert.issuer}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">Completed {cert.date}</span>
+                      <Button 
+                        size="sm" 
+                        variant="outline" 
+                        className="border-primary/50 hover:bg-primary/10 text-xs"
+                      >
+                        <ExternalLink className="mr-1 h-3 w-3" />
+                        View
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-20 px-6 bg-card/30">
         <div className="max-w-4xl mx-auto text-center">
