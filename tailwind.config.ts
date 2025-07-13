@@ -61,7 +61,19 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom tech theme colors
+				'electric-blue': 'hsl(var(--electric-blue))',
+				'electric-blue-muted': 'hsl(var(--electric-blue-muted))',
+				'tech-dark': 'hsl(var(--tech-dark))',
+				'tech-gray': 'hsl(var(--tech-gray))',
+				'tech-light': 'hsl(var(--tech-light))',
+				'glass-bg': 'hsl(var(--glass-bg))'
+			},
+			backgroundImage: {
+				'gradient-electric': 'var(--gradient-electric)',
+				'gradient-glass': 'var(--gradient-glass)',
+				'gradient-hero': 'var(--gradient-hero)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
