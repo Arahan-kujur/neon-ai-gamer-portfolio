@@ -72,10 +72,9 @@ const Portfolio = () => {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
       <section 
-        className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
+        className="relative min-h-screen flex items-center justify-center bg-gradient-hero"
       >
-        <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-tech-dark via-background to-tech-gray opacity-95"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
           <div className="animate-fade-in-up">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-electric bg-clip-text text-transparent text-electric-glow">
