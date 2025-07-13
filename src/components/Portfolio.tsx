@@ -306,7 +306,7 @@ const Portfolio = () => {
                       <span className="font-medium">{cert.issuer}</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-muted-foreground">Completed {cert.date}</span>
+                      <span className="text-sm text-muted-foreground">In Progress {cert.date}</span>
                       <Button 
                         size="sm" 
                         variant="outline" 
