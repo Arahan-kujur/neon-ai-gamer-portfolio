@@ -11,7 +11,7 @@ const Portfolio = () => {
       description: "DistilBERT-based model for detecting toxic comments in social media platforms with 95% accuracy.",
       tech: ["Python", "PyTorch", "DistilBERT", "Transformers", "Gradio"],
       image: "/api/placeholder/400/250",
-      link: "#",
+      link: "https://github.com/Arahan-kujur/toxic-comment-detector",
       type: "AI"
     },
     {
@@ -20,32 +20,24 @@ const Portfolio = () => {
       tech: ["Python", "OpenCV", "TensorFlow", "YOLO", "Pose Estimation"],
       image: "/api/placeholder/400/250",
       link: "#",
-      type: "AI"
+      type: "AI",
+      status: "In Progress"
     },
     {
       title: "Penguins Can Fly",
       description: "Endless runner game featuring a flying penguin with smooth controls and dynamic obstacle generation.",
       tech: ["Unreal Engine", "C++", "Blueprint", "3D Animation"],
       image: "/api/placeholder/400/250",
-      link: "#",
-      type: "Game"
-    },
-    {
-      title: "Trash Tyre",
-      description: "3D game jam project where players navigate through environmental challenges with recycled tire mechanics.",
-      tech: ["Unreal Engine", "Blender", "C++", "3D Modeling"],
-      image: "/api/placeholder/400/250",
-      link: "#",
+      link: "https://arahan-kujur.itch.io/penguin-drift",
       type: "Game"
     }
   ];
 
   const skills = {
     "Languages": [
-      { name: "Python", level: 90 },
+      { name: "Python", level: 100 },
       { name: "C++", level: 85 },
-      { name: "JavaScript", level: 80 },
-      { name: "HTML/CSS", level: 85 }
+      { name: "Unreal's Blueprint", level: 90 }
     ],
     "AI Tools": [
       { name: "PyTorch", level: 90 },
@@ -85,15 +77,29 @@ const Portfolio = () => {
               and immersive gaming experiences.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="electric-glow hover-lift bg-gradient-electric text-tech-dark font-semibold">
+              <Button 
+                size="lg" 
+                className="electric-glow hover-lift bg-gradient-electric text-tech-dark font-semibold"
+                onClick={() => window.open('https://github.com/Arahan-kujur', '_blank')}
+              >
                 <Github className="mr-2 h-5 w-5" />
                 View GitHub
               </Button>
-              <Button variant="outline" size="lg" className="glass-card hover-lift border-primary/50">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="glass-card hover-lift border-primary/50"
+                onClick={() => window.open('https://arahan-kujur.itch.io', '_blank')}
+              >
                 <Gamepad2 className="mr-2 h-5 w-5" />
                 Itch.io Games
               </Button>
-              <Button variant="outline" size="lg" className="glass-card hover-lift border-primary/50">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="glass-card hover-lift border-primary/50"
+                onClick={() => window.open('https://www.linkedin.com/in/arahan-kujur-a26b1a374', '_blank')}
+              >
                 <Linkedin className="mr-2 h-5 w-5" />
                 LinkedIn
               </Button>
@@ -174,11 +180,18 @@ const Portfolio = () => {
                     alt={project.title}
                     className="w-full h-48 object-cover transition-transform group-hover:scale-105"
                   />
-                  <Badge 
-                    className={`absolute top-4 right-4 ${project.type === 'AI' ? 'bg-primary/90' : 'bg-accent/90'}`}
-                  >
-                    {project.type}
-                  </Badge>
+                  <div className="absolute top-4 right-4 flex gap-2">
+                    <Badge 
+                      className={`${project.type === 'AI' ? 'bg-primary/90' : 'bg-accent/90'}`}
+                    >
+                      {project.type}
+                    </Badge>
+                    {project.status && (
+                      <Badge className="bg-orange-500/90">
+                        {project.status}
+                      </Badge>
+                    )}
+                  </div>
                 </div>
                 <CardHeader>
                   <CardTitle className="text-primary">{project.title}</CardTitle>
@@ -194,7 +207,10 @@ const Portfolio = () => {
                       </Badge>
                     ))}
                   </div>
-                  <Button className="w-full hover-scale bg-gradient-electric text-tech-dark">
+                  <Button 
+                    className="w-full hover-scale bg-gradient-electric text-tech-dark"
+                    onClick={() => window.open(project.link, '_blank')}
+                  >
                     <ExternalLink className="mr-2 h-4 w-4" />
                     View Project
                   </Button>
@@ -247,79 +263,8 @@ const Portfolio = () => {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-electric-glow">Certifications</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Deep Learning Specialization",
-                issuer: "Coursera / DeepLearning.AI",
-                date: "2024",
-                badge: "AI"
-              },
-              {
-                title: "Natural Language Processing",
-                issuer: "Coursera / DeepLearning.AI", 
-                date: "2024",
-                badge: "NLP"
-              },
-              {
-                title: "Computer Vision Fundamentals",
-                issuer: "Coursera / University of Buffalo",
-                date: "2023",
-                badge: "CV"
-              },
-              {
-                title: "Game Development with Unreal Engine",
-                issuer: "Udemy",
-                date: "2023",
-                badge: "Game"
-              },
-              {
-                title: "LangChain for LLM Development",
-                issuer: "DeepLearning.AI",
-                date: "2024",
-                badge: "LLM"
-              },
-              {
-                title: "Generative AI with Large Language Models",
-                issuer: "Coursera / DeepLearning.AI",
-                date: "2024",
-                badge: "GenAI"
-              }
-            ].map((cert, index) => (
-              <Card key={index} className="glass-card hover-lift border-primary/30 group">
-                <CardHeader className="pb-3">
-                  <div className="flex items-start justify-between gap-3">
-                    <CardTitle className="text-lg leading-tight text-primary group-hover:text-electric-glow transition-colors">
-                      {cert.title}
-                    </CardTitle>
-                    <Badge 
-                      variant="secondary" 
-                      className="bg-gradient-electric/20 text-primary border-primary/30 shrink-0"
-                    >
-                      {cert.badge}
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <span className="font-medium">{cert.issuer}</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-muted-foreground">In Progress {cert.date}</span>
-                      <Button 
-                        size="sm" 
-                        variant="outline" 
-                        className="border-primary/50 hover:bg-primary/10 text-xs"
-                      >
-                        <ExternalLink className="mr-1 h-3 w-3" />
-                        View
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="text-center text-muted-foreground">
+            <p>No certifications to display at the moment.</p>
           </div>
         </div>
       </section>
@@ -334,13 +279,23 @@ const Portfolio = () => {
           </p>
           
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Button variant="outline" size="lg" className="glass-card hover-lift border-primary/50 h-20">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="glass-card hover-lift border-primary/50 h-20"
+              onClick={() => window.open('https://github.com/Arahan-kujur', '_blank')}
+            >
               <div className="flex flex-col items-center gap-2">
                 <Github className="h-6 w-6" />
                 <span>GitHub</span>
               </div>
             </Button>
-            <Button variant="outline" size="lg" className="glass-card hover-lift border-primary/50 h-20">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="glass-card hover-lift border-primary/50 h-20"
+              onClick={() => window.open('https://www.linkedin.com/in/arahan-kujur-a26b1a374', '_blank')}
+            >
               <div className="flex flex-col items-center gap-2">
                 <Linkedin className="h-6 w-6" />
                 <span>LinkedIn</span>
