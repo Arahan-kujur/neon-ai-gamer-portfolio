@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, ExternalLink, Mail, Code, Brain, Gamepad2, Cpu, Database, Zap, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Portfolio = () => {
@@ -367,10 +368,12 @@ const Portfolio = () => {
             </Button>
           </div>
 
-          <Button size="lg" className="electric-glow hover-scale bg-gradient-electric text-tech-dark font-semibold">
-            <Mail className="mr-2 h-5 w-5" />
-            Get In Touch
-          </Button>
+          <Link to="/contact">
+            <Button size="lg" className="electric-glow hover-scale bg-gradient-electric text-tech-dark font-semibold">
+              <Mail className="mr-2 h-5 w-5" />
+              Get In Touch
+            </Button>
+          </Link>
         </div>
       </section>
 
