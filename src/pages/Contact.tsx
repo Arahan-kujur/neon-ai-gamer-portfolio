@@ -19,9 +19,9 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   // EmailJS configuration - Replace these with your actual EmailJS credentials
-  const EMAILJS_SERVICE_ID = "your_service_id";
-  const EMAILJS_TEMPLATE_ID = "your_template_id";
-  const EMAILJS_USER_ID = "your_user_id";
+  const EMAILJS_SERVICE_ID = "service_ayrayt8";
+  const EMAILJS_TEMPLATE_ID = "template_m30xu8o";
+  const EMAILJS_USER_ID = "P6jj6yulEWu1RCjPC";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
