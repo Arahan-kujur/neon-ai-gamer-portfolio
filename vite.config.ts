@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // Replace this with your actual GitHub repo name
-const repoName = "your-repo-name"; // e.g., "portfolio"
+const repoName = "neon-ai-gamer-portfolio"; // e.g., "portfolio"
 
 export default defineConfig(({ mode }) => ({
   base: `/${repoName}/`,
