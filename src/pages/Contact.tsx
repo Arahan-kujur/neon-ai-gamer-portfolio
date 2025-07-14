@@ -4,9 +4,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Mail, Send, ArrowLeft } from "lucide-react";
+import { Mail, Send, ArrowLeft, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,20 +16,44 @@ const Contact = () => {
     subject: "",
     message: ""
   });
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // EmailJS configuration - Replace these with your actual EmailJS credentials
+  const EMAILJS_SERVICE_ID = "your_service_id";
+  const EMAILJS_TEMPLATE_ID = "your_template_id";
+  const EMAILJS_USER_ID = "your_user_id";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Create mailto link with form data
-    const subject = encodeURIComponent(formData.subject || "Contact from Portfolio");
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-    
-    const mailtoLink = `mailto:arahan.kujur@example.com?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
-    
-    toast.success("Opening your email client...");
+    setIsLoading(true);
+
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject || "Contact from Portfolio",
+          message: formData.message,
+          to_name: "Arahan Kujur",
+        },
+        EMAILJS_USER_ID
+      );
+
+      if (result.status === 200) {
+        toast.success("Message sent successfully! I'll get back to you soon.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error("Failed to send message. Please try again or contact me directly.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -124,16 +149,26 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full electric-glow hover-scale bg-gradient-electric text-tech-dark font-semibold"
+                  disabled={isLoading}
+                  className="w-full electric-glow hover-scale bg-gradient-electric text-tech-dark font-semibold disabled:opacity-50"
                 >
-                  <Send className="mr-2 h-5 w-5" />
-                  Send Message
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-5 w-5" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
 
               <div className="mt-8 pt-6 border-t border-primary/20">
                 <p className="text-center text-sm text-muted-foreground">
-                  This will open your default email client with the message pre-filled.
+                  Your message will be sent directly to my inbox.
                   <br />
                   You can also reach me directly at:{" "}
                   <a 
@@ -143,6 +178,12 @@ const Contact = () => {
                     arahan.kujur@example.com
                   </a>
                 </p>
+                <div className="mt-4 p-3 rounded-lg bg-primary/10 border border-primary/20">
+                  <p className="text-xs text-muted-foreground text-center">
+                    <strong>Setup Required:</strong> Replace the EmailJS credentials (service_id, template_id, user_id) 
+                    in the code with your actual EmailJS configuration to enable email sending.
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>
