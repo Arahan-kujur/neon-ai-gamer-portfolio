@@ -41,7 +41,7 @@ const Portfolio = () => {
     ],
     "AI Tools": [
       { name: "PyTorch", level: 90 },
-      { name: "TensorFlow", level: 85 },
+      { name: "Langchain", level: 85 },
       { name: "Transformers", level: 88 },
       { name: "OpenCV", level: 82 },
       { name: "Gradio", level: 75 }
@@ -120,15 +120,21 @@ const Portfolio = () => {
             <div className="space-y-6 animate-slide-up">
               <h2 className="text-4xl font-bold text-electric-glow">About Me</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm Arahan Kujur, an aspiring AI engineer and game developer passionate about creating 
-                intelligent systems that enhance gaming experiences. My journey combines cutting-edge 
-                machine learning research with immersive game development.
+                Hi, I'm Arahan Kujur — an aspiring developer passionate about the intersection of AI and game development. 
+                I love building interactive experiences and intelligent systems that feel alive and responsive. Whether it's 
+                designing engaging gameplay mechanics or experimenting with machine learning models, I thrive on solving 
+                creative challenges through code.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I specialize in natural language processing, computer vision, and AI-driven gameplay mechanics. 
-                From building neural networks that understand human behavior to crafting worlds in Unreal Engine, 
-                I bridge the gap between artificial intelligence and interactive entertainment.
-              </p>
+              <div className="space-y-3 text-muted-foreground">
+                <p>I'm currently exploring:</p>
+                <div className="ml-4 space-y-2">
+                  <p>🎮 Game Development with Unreal Engine & C++</p>
+                  <p>🤖 AI/ML models for gameplay and real-world applications</p>
+                  <p>🧠 NLP and computer vision tools like Transformers and OpenCV</p>
+                  <p>🛠️ Full-stack app development to bring my ideas to life</p>
+                </div>
+                <p>I'm always learning and looking for opportunities to grow — especially in communities that value innovation, curiosity, and building cool stuff.</p>
+              </div>
               <div className="flex flex-wrap gap-3">
                 {["NLP", "Computer Vision", "Unreal Engine", "AI for Gameplay", "xG Models", "Deep Learning"].map((interest) => (
                   <Badge key={interest} variant="secondary" className="bg-card border-primary/30 hover:border-primary transition-colors">
@@ -263,8 +269,60 @@ const Portfolio = () => {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-electric-glow">Certifications</h2>
-          <div className="text-center text-muted-foreground">
-            <p>No certifications to display at the moment.</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="glass-card hover-lift border-primary/30">
+              <CardHeader>
+                <CardTitle className="text-primary text-lg">The Ultimate Blender Simulation, Physics and Particles Course</CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Udemy • Completed 2025
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button 
+                  variant="outline" 
+                  className="w-full border-primary/50 hover:bg-primary/10"
+                  onClick={() => window.open('https://drive.google.com/file/d/1dhRLiHt_ne6YXEChGN6pwnLY0JXzQRV9/view?usp=sharing', '_blank')}
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  View Certificate
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card hover-lift border-primary/30">
+              <CardHeader>
+                <CardTitle className="text-primary text-lg">Unreal Engine 5 Blueprints - The Ultimate Developer Course</CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Udemy • Completed 2025
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button 
+                  variant="outline" 
+                  className="w-full border-primary/50 hover:bg-primary/10"
+                  onClick={() => window.open('https://drive.google.com/file/d/1WBP1byLfC_NLCh8sfpYoDZdoEWMf8phy/view?usp=drive_link', '_blank')}
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  View Certificate
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card hover-lift border-primary/30">
+              <CardHeader>
+                <CardTitle className="text-primary text-lg">IBM RAG and Agentic AI</CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Coursera • In Progress
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="w-full text-center py-2">
+                  <Badge className="bg-orange-500/90">
+                    In Progress
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
