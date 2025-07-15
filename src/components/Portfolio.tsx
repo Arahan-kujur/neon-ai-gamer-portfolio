@@ -2,104 +2,104 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, ExternalLink, Mail, Code, Brain, Gamepad2, Cpu, Database, Zap, Star } from "lucide-react";
-import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
+
 const Portfolio = () => {
-  const projects = [{
-    title: "Toxic Comment Detection AI",
-    description: "DistilBERT-based model for detecting toxic comments in social media platforms with 95% accuracy.",
-    tech: ["Python", "PyTorch", "DistilBERT", "Transformers", "Gradio"],
-    image: "/api/placeholder/400/250",
-    link: "https://github.com/Arahan-kujur/toxic-comment-detector",
-    type: "AI"
-  }, {
-    title: "xG Football Model from Video",
-    description: "Computer vision model that calculates Expected Goals (xG) from football match videos using pose estimation.",
-    tech: ["Python", "OpenCV", "TensorFlow", "YOLO", "Pose Estimation"],
-    image: "/api/placeholder/400/250",
-    link: "#",
-    type: "AI",
-    status: "In Progress"
-  }, {
-    title: "Penguins Can Fly",
-    description: "Endless runner game featuring a flying penguin with smooth controls and dynamic obstacle generation.",
-    tech: ["Unreal Engine", "C++", "Blueprint", "3D Animation"],
-    image: "/api/placeholder/400/250",
-    link: "https://arahan-kujur.itch.io/penguin-drift",
-    type: "Game"
-  }];
+  const projects = [
+    {
+      title: "Toxic Comment Detection AI",
+      description: "DistilBERT-based model for detecting toxic comments in social media platforms with 95% accuracy.",
+      tech: ["Python", "PyTorch", "DistilBERT", "Transformers", "Gradio"],
+      image: "/api/placeholder/400/250",
+      link: "https://github.com/Arahan-kujur/toxic-comment-detector",
+      type: "AI"
+    },
+    {
+      title: "xG Football Model from Video",
+      description: "Computer vision model that calculates Expected Goals (xG) from football match videos using pose estimation.",
+      tech: ["Python", "OpenCV", "TensorFlow", "YOLO", "Pose Estimation"],
+      image: "/api/placeholder/400/250",
+      link: "#",
+      type: "AI",
+      status: "In Progress"
+    },
+    {
+      title: "Penguins Can Fly",
+      description: "Endless runner game featuring a flying penguin with smooth controls and dynamic obstacle generation.",
+      tech: ["Unreal Engine", "C++", "Blueprint", "3D Animation"],
+      image: "/api/placeholder/400/250",
+      link: "https://arahan-kujur.itch.io/penguin-drift",
+      type: "Game"
+    }
+  ];
+
   const skills = {
-    "Languages": [{
-      name: "Python",
-      level: 100
-    }, {
-      name: "C++",
-      level: 85
-    }, {
-      name: "Unreal's Blueprint",
-      level: 90
-    }],
-    "AI Tools": [{
-      name: "PyTorch",
-      level: 90
-    }, {
-      name: "Langchain",
-      level: 85
-    }, {
-      name: "Transformers",
-      level: 88
-    }, {
-      name: "OpenCV",
-      level: 82
-    }, {
-      name: "Gradio",
-      level: 75
-    }],
-    "Game Tools": [{
-      name: "Unreal Engine",
-      level: 85
-    }, {
-      name: "Blender",
-      level: 78
-    }, {
-      name: "3D Modeling",
-      level: 75
-    }, {
-      name: "Game Design",
-      level: 88
-    }],
-    "Other": [{
-      name: "Git",
-      level: 90
-    }, {
-      name: "VS Code",
-      level: 95
-    }, {
-      name: "Hugging Face",
-      level: 85
-    }, {
-      name: "Docker",
-      level: 70
-    }]
+    "Languages": [
+      { name: "Python", level: 100 },
+      { name: "C++", level: 85 },
+      { name: "Unreal's Blueprint", level: 90 }
+    ],
+    "AI Tools": [
+      { name: "PyTorch", level: 90 },
+      { name: "Langchain", level: 85 },
+      { name: "Transformers", level: 88 },
+      { name: "OpenCV", level: 82 },
+      { name: "Gradio", level: 75 }
+    ],
+    "Game Tools": [
+      { name: "Unreal Engine", level: 85 },
+      { name: "Blender", level: 78 },
+      { name: "3D Modeling", level: 75 },
+      { name: "Game Design", level: 88 }
+    ],
+    "Other": [
+      { name: "Git", level: 90 },
+      { name: "VS Code", level: 95 },
+      { name: "Hugging Face", level: 85 },
+      { name: "Docker", level: 70 }
+    ]
   };
-  return <div className="min-h-screen bg-background text-foreground">
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero">
+      <section 
+        className="relative min-h-screen flex items-center justify-center bg-gradient-hero"
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-tech-dark via-background to-tech-gray opacity-95"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
           <div className="animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-electric bg-clip-text text-transparent text-electric-glow">Game Developer & AI Enthusiast Portfolio</h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">Arahan kujur is an aspiring AI Engineer & Game Developer specializing in machine learning, computer vision, and immersive gaming experiences.</p>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-electric bg-clip-text text-transparent text-electric-glow">
+              Building Smarter Games with AI
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Aspiring AI Engineer & Game Developer specializing in machine learning, computer vision, 
+              and immersive gaming experiences.
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="electric-glow hover-lift bg-gradient-electric text-tech-dark font-semibold" onClick={() => window.open('https://github.com/Arahan-kujur', '_blank')}>
+              <Button 
+                size="lg" 
+                className="electric-glow hover-lift bg-gradient-electric text-tech-dark font-semibold"
+                onClick={() => window.open('https://github.com/Arahan-kujur', '_blank')}
+              >
                 <Github className="mr-2 h-5 w-5" />
                 View GitHub
               </Button>
-              <Button variant="outline" size="lg" className="glass-card hover-lift border-primary/50" onClick={() => window.open('https://arahan-kujur.itch.io', '_blank')}>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="glass-card hover-lift border-primary/50"
+                onClick={() => window.open('https://arahan-kujur.itch.io', '_blank')}
+              >
                 <Gamepad2 className="mr-2 h-5 w-5" />
                 Itch.io Games
               </Button>
-              <Button variant="outline" size="lg" className="glass-card hover-lift border-primary/50" onClick={() => window.open('https://www.linkedin.com/in/arahan-kujur-a26b1a374', '_blank')}>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="glass-card hover-lift border-primary/50"
+                onClick={() => window.open('https://www.linkedin.com/in/arahan-kujur-a26b1a374', '_blank')}
+              >
                 <Linkedin className="mr-2 h-5 w-5" />
                 LinkedIn
               </Button>
@@ -136,9 +136,11 @@ const Portfolio = () => {
                 <p>I'm always learning and looking for opportunities to grow — especially in communities that value innovation, curiosity, and building cool stuff.</p>
               </div>
               <div className="flex flex-wrap gap-3">
-                {["NLP", "Computer Vision", "Unreal Engine", "AI for Gameplay", "xG Models", "Deep Learning"].map(interest => <Badge key={interest} variant="secondary" className="bg-card border-primary/30 hover:border-primary transition-colors">
+                {["NLP", "Computer Vision", "Unreal Engine", "AI for Gameplay", "xG Models", "Deep Learning"].map((interest) => (
+                  <Badge key={interest} variant="secondary" className="bg-card border-primary/30 hover:border-primary transition-colors">
                     {interest}
-                  </Badge>)}
+                  </Badge>
+                ))}
               </div>
             </div>
             <Card className="glass-card hover-lift border-primary/30">
@@ -176,16 +178,25 @@ const Portfolio = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-electric-glow">Featured Projects</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => <Card key={index} className="glass-card hover-lift border-primary/30 overflow-hidden group">
+            {projects.map((project, index) => (
+              <Card key={index} className="glass-card hover-lift border-primary/30 overflow-hidden group">
                 <div className="relative">
-                  <img src={project.image} alt={project.title} className="w-full h-48 object-cover transition-transform group-hover:scale-105" />
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform group-hover:scale-105"
+                  />
                   <div className="absolute top-4 right-4 flex gap-2">
-                    <Badge className={`${project.type === 'AI' ? 'bg-primary/90' : 'bg-accent/90'}`}>
+                    <Badge 
+                      className={`${project.type === 'AI' ? 'bg-primary/90' : 'bg-accent/90'}`}
+                    >
                       {project.type}
                     </Badge>
-                    {project.status && <Badge className="bg-orange-500/90">
+                    {project.status && (
+                      <Badge className="bg-orange-500/90">
                         {project.status}
-                      </Badge>}
+                      </Badge>
+                    )}
                   </div>
                 </div>
                 <CardHeader>
@@ -196,16 +207,22 @@ const Portfolio = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map(tech => <Badge key={tech} variant="outline" className="border-primary/50">
+                    {project.tech.map((tech) => (
+                      <Badge key={tech} variant="outline" className="border-primary/50">
                         {tech}
-                      </Badge>)}
+                      </Badge>
+                    ))}
                   </div>
-                  <Button className="w-full hover-scale bg-gradient-electric text-tech-dark" onClick={() => window.open(project.link, '_blank')}>
+                  <Button 
+                    className="w-full hover-scale bg-gradient-electric text-tech-dark"
+                    onClick={() => window.open(project.link, '_blank')}
+                  >
                     <ExternalLink className="mr-2 h-4 w-4" />
                     View Project
                   </Button>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -215,7 +232,8 @@ const Portfolio = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-electric-glow">Skills & Technologies</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {Object.entries(skills).map(([category, skillList]) => <Card key={category} className="glass-card border-primary/30">
+            {Object.entries(skills).map(([category, skillList]) => (
+              <Card key={category} className="glass-card border-primary/30">
                 <CardHeader>
                   <CardTitle className="text-primary flex items-center gap-2">
                     {category === "Languages" && <Code className="h-5 w-5" />}
@@ -226,19 +244,23 @@ const Portfolio = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  {skillList.map(skill => <div key={skill.name} className="space-y-2">
+                  {skillList.map((skill) => (
+                    <div key={skill.name} className="space-y-2">
                       <div className="flex justify-between">
                         <span className="text-sm font-medium">{skill.name}</span>
                         <span className="text-sm text-muted-foreground">{skill.level}%</span>
                       </div>
                       <div className="w-full bg-muted/30 rounded-full h-2">
-                        <div className="bg-gradient-electric h-2 rounded-full transition-all duration-1000 hover:animate-glow" style={{
-                    width: `${skill.level}%`
-                  }}></div>
+                        <div 
+                          className="bg-gradient-electric h-2 rounded-full transition-all duration-1000 hover:animate-glow"
+                          style={{ width: `${skill.level}%` }}
+                        ></div>
                       </div>
-                    </div>)}
+                    </div>
+                  ))}
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -256,7 +278,11 @@ const Portfolio = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" className="w-full border-primary/50 hover:bg-primary/10" onClick={() => window.open('https://drive.google.com/file/d/1dhRLiHt_ne6YXEChGN6pwnLY0JXzQRV9/view?usp=sharing', '_blank')}>
+                <Button 
+                  variant="outline" 
+                  className="w-full border-primary/50 hover:bg-primary/10"
+                  onClick={() => window.open('https://drive.google.com/file/d/1dhRLiHt_ne6YXEChGN6pwnLY0JXzQRV9/view?usp=sharing', '_blank')}
+                >
                   <ExternalLink className="mr-2 h-4 w-4" />
                   View Certificate
                 </Button>
@@ -271,7 +297,11 @@ const Portfolio = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" className="w-full border-primary/50 hover:bg-primary/10" onClick={() => window.open('https://drive.google.com/file/d/1WBP1byLfC_NLCh8sfpYoDZdoEWMf8phy/view?usp=drive_link', '_blank')}>
+                <Button 
+                  variant="outline" 
+                  className="w-full border-primary/50 hover:bg-primary/10"
+                  onClick={() => window.open('https://drive.google.com/file/d/1WBP1byLfC_NLCh8sfpYoDZdoEWMf8phy/view?usp=drive_link', '_blank')}
+                >
                   <ExternalLink className="mr-2 h-4 w-4" />
                   View Certificate
                 </Button>
@@ -307,13 +337,23 @@ const Portfolio = () => {
           </p>
           
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Button variant="outline" size="lg" className="glass-card hover-lift border-primary/50 h-20" onClick={() => window.open('https://github.com/Arahan-kujur', '_blank')}>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="glass-card hover-lift border-primary/50 h-20"
+              onClick={() => window.open('https://github.com/Arahan-kujur', '_blank')}
+            >
               <div className="flex flex-col items-center gap-2">
                 <Github className="h-6 w-6" />
                 <span>GitHub</span>
               </div>
             </Button>
-            <Button variant="outline" size="lg" className="glass-card hover-lift border-primary/50 h-20" onClick={() => window.open('https://www.linkedin.com/in/arahan-kujur-a26b1a374', '_blank')}>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="glass-card hover-lift border-primary/50 h-20"
+              onClick={() => window.open('https://www.linkedin.com/in/arahan-kujur-a26b1a374', '_blank')}
+            >
               <div className="flex flex-col items-center gap-2">
                 <Linkedin className="h-6 w-6" />
                 <span>LinkedIn</span>
@@ -327,12 +367,10 @@ const Portfolio = () => {
             </Button>
           </div>
 
-          <Link to="/contact">
-            <Button size="lg" className="electric-glow hover-scale bg-gradient-electric text-tech-dark font-semibold">
-              <Mail className="mr-2 h-5 w-5" />
-              Get In Touch
-            </Button>
-          </Link>
+          <Button size="lg" className="electric-glow hover-scale bg-gradient-electric text-tech-dark font-semibold">
+            <Mail className="mr-2 h-5 w-5" />
+            Get In Touch
+          </Button>
         </div>
       </section>
 
@@ -348,6 +386,8 @@ const Portfolio = () => {
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Portfolio;
